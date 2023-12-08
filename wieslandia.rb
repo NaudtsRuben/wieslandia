@@ -142,6 +142,10 @@ end
 
 
 
+# ------------------------------ lied -----------------------------------
+
+
+
 use_bpm 100
 use_synth_defaults release: 0.5, amp: 0.7, cutoff: 90
 use_synth :piano
@@ -154,302 +158,294 @@ end
   play_pattern_timed [:f2, :f3], 0.5
 end
 
-
-live_loop :clublied_refrein_piano_low do
-  
-  #STROFE:
-  
-  
+in_thread do
   2.times do
     
-    2.times do
-      play_pattern_timed [:f2, :f3, :r, :f3], 0.5
-    end
+    #STROFE:
     
-    play_chord [:b1,:b2]
-    sleep 1
-    play_chord [:c2,:c3]
-    sleep 1
-    sleep 0.5
-    play_chord [:f2,:f3]
-    sleep 0.5
-    play_chord [:f2,:f3]
-    sleep 0.5
-    sleep 0.5
     
     2.times do
-      play_pattern_timed [:f2, :f3, :r, :f3], 0.5
+      
+      2.times do
+        play_pattern_timed [:f2, :f3, :r, :f3], 0.5
+      end
+      
+      play_chord [:b1,:b2]
+      sleep 1
+      play_chord [:c2,:c3]
+      sleep 1
+      sleep 0.5
+      play_chord [:f2,:f3]
+      sleep 0.5
+      play_chord [:f2,:f3]
+      sleep 0.5
+      sleep 0.5
+      
+      2.times do
+        play_pattern_timed [:f2, :f3, :r, :f3], 0.5
+      end
+      
+      
+      play_chord [:c2,:c3]
+      sleep 1
+      play_chord [:b1,:bb2]
+      sleep 1
+      sleep 0.5
+      play_chord [:f2,:f3]
+      sleep 0.5
+      play_chord [:f2,:f3]
+      sleep 0.5
+      sleep 0.5
     end
     
     
-    play_chord [:c2,:c3]
-    sleep 1
+    
+    # REFREIN:
+    
+    play_chord [:f2, :f3]
+    sleep 2
+    
     play_chord [:b1,:bb2]
     sleep 1
+    play_chord [:b1,:bb2]
+    sleep 2
+    play_chord [:b1,:bb2]
+    sleep 1
+    
+    play_chord [:f2,:f3]
+    sleep 1
+    play_chord [:f2,:f3]
+    sleep 1
+    play_chord [:f2,:f3]
+    sleep 0.5
+    play_chord [:f2,:f3]
+    sleep 0.5
+    sleep 1
+    
+    play_chord [:c2, :c3]
+    sleep 2
+    play_chord [:c2, :c3]
+    sleep 2
+    
+    play_chord [:f2,:f3]
+    sleep 1
+    play_chord [:f2,:f3]
+    sleep 1
+    play_chord [:f2,:f3]
+    sleep 0.5
+    play_chord [:f2,:f3]
+    sleep 0.5
+    sleep 1
+    
+    play_chord [:b1, :bb2]
+    sleep 2
+    play_chord [:b1, :bb2]
+    sleep 2
+    
+    play_chord [:f2,:f3]
+    sleep 2
+    play_chord [:f2,:f3]
+    sleep 2
+    
+    play_chord [:c2, :c3]
+    sleep 2
+    play_chord [:c2, :c3]
+    sleep 2
+    
     sleep 0.5
     play_chord [:f2,:f3]
     sleep 0.5
     play_chord [:f2,:f3]
     sleep 0.5
+    sleep 1
+    play_chord [:c2, :c3]
     sleep 0.5
+    play_chord [:c2, :c3]
+    sleep 0.5
+    sleep 0.5
+    
+    sleep 1
+    play_chord [:f2, :c3, :f3]
+    sleep 1
+    play_chord [:f2, :c3, :f3]
+    sleep 1
+    sleep 1
+    
   end
-  
-  
-  
-  # REFREIN:
-  
-  play_chord [:f2, :f3]
-  sleep 2
-  
-  play_chord [:b1,:bb2]
-  sleep 1
-  play_chord [:b1,:bb2]
-  sleep 2
-  play_chord [:b1,:bb2]
-  sleep 1
-  
-  play_chord [:f2,:f3]
-  sleep 1
-  play_chord [:f2,:f3]
-  sleep 1
-  play_chord [:f2,:f3]
-  sleep 0.5
-  play_chord [:f2,:f3]
-  sleep 0.5
-  sleep 1
-  
-  play_chord [:c2, :c3]
-  sleep 2
-  play_chord [:c2, :c3]
-  sleep 2
-  
-  play_chord [:f2,:f3]
-  sleep 1
-  play_chord [:f2,:f3]
-  sleep 1
-  play_chord [:f2,:f3]
-  sleep 0.5
-  play_chord [:f2,:f3]
-  sleep 0.5
-  sleep 1
-  
-  play_chord [:b1, :bb2]
-  sleep 2
-  play_chord [:b1, :bb2]
-  sleep 2
-  
-  play_chord [:f2,:f3]
-  sleep 2
-  play_chord [:f2,:f3]
-  sleep 2
-  
-  play_chord [:c2, :c3]
-  sleep 2
-  play_chord [:c2, :c3]
-  sleep 2
-  
-  sleep 0.5
-  play_chord [:f2,:f3]
-  sleep 0.5
-  play_chord [:f2,:f3]
-  sleep 0.5
-  sleep 1
-  play_chord [:c2, :c3]
-  sleep 0.5
-  play_chord [:c2, :c3]
-  sleep 0.5
-  sleep 0.5
-  
-  sleep 1
-  play_chord [:f2, :c3, :f3]
-  sleep 1
-  play_chord [:f2, :c3, :f3]
-  sleep 1
-  sleep 1
-  
 end
 
-live_loop :clublied_refrein_piano_high do
-  
-  # STROFE:
-  
-  
-  play_pattern_timed [:c, :f, :a] , [0.05, 0.05, 0.4], sustain: 0.5
-  
-  play_pattern_timed [:g, :f, :c], 0.5
-  play_pattern_timed [:d, :c], 1
-  
-  play_chord [:d, :f]
-  sleep 0.5
-  play_chord [:d, :f]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 1
-  sleep 0.5
-  play_pattern_timed [:c, :a, :g, :f, :c], 0.5
-  play_pattern_timed [:d],1
-  play_pattern_timed [:c, :c], 0.5
-  
-  
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:c, :f]
-  sleep 1
-  sleep 0.5
-  play_pattern_timed [:c, :a, :g, :f, :c], 0.5
-  play_pattern_timed [:d, :c], 1
-  
-  play_chord [:d, :f]
-  sleep 0.5
-  play_chord [:d, :f]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 1
-  sleep 0.5
-  play_pattern_timed [:c, :a, :g, :f, :c], 0.5
-  play_pattern_timed [:d],1
-  play_pattern_timed [:c, :c], 0.5
-  
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:c, :f]
-  sleep 1
-  sleep 1
-  
-  
-  
-  
-  
-  # REFREIN:
-  
-  sleep 1
-  play_pattern_timed [:f, :f], 0.5
-  
-  play_chord [:f, :bb]
-  sleep 0.5
-  play_chord [:f, :bb]
-  sleep 0.5
-  play_chord [:f, :bb]
-  sleep 0.25
-  play_chord [:f, :bb]
-  sleep 0.25
-  play_chord [:f, :bb]
-  sleep 1
-  play_chord [:f, :bb]
-  sleep 0.5
-  play_chord [:f, :bb]
-  sleep 0.5
-  play_chord [:f, :bb]
-  sleep 0.5
-  
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:c, :f]
-  sleep 0.5
-  sleep 0.5
-  play_chord [:e, :d5]
-  sleep 0.5
-  play_chord [:e, :d5]
-  sleep 0.5
-  
-  play_chord [:e, :d5]
-  sleep 0.5
-  play_pattern_timed [:c, :d, :e, :f, :g, :a, :bb], 0.5
-  
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:e, :g]
-  sleep 0.5
-  play_chord [:c, :f]
-  sleep 0.5
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 0.5
-  
-  play_chord [:f, :bb]
-  sleep 0.5
-  play_chord [:bb, :d5]
-  sleep 0.5
-  play_chord [:bb, :d5]
-  sleep 0.5
-  play_chord [:bb, :d5]
-  sleep 0.5
-  play_chord [:bb, :d5]
-  sleep 0.25
-  play_chord [:bb, :d5]
-  sleep 0.25
-  play_chord [:bb, :d5]
-  sleep 1
-  play_chord [:bb, :d5]
-  sleep 0.5
-  
-  play_chord [:a, :c5]
-  sleep 0.5
-  play_chord [:a, :c5]
-  sleep 0.5
-  play_chord [:a, :c5]
-  sleep 0.5
-  play_chord [:g, :b]
-  sleep 0.5
-  play_chord [:f, :a]
-  sleep 1
-  play_chord [:e, :c5]
-  sleep 0.5
-  play_chord [:e, :c5]
-  sleep 0.5
-  
-  play_chord [:e, :c5]
-  sleep 0.5
-  play_pattern_timed [:c, :d, :e, :f, :g, :a, :bb], 0.5
-  
-  play_chord [:f, :a]
-  sleep 1.5
-  play_chord [:c, :f]
-  sleep 0.5
-  play_chord [:b3, :g]
-  sleep 1.5
-  play_chord [:b3, :e]
-  sleep 0.5
-  
-  play_chord [:c, :f]
-  sleep 1
-  play_chord [:c, :f]
-  sleep 1
-  play_chord [:c, :f]
-  sleep 1
-  sleep 1
+in_thread do
+  2.times do
+    
+    # STROFE:
+    
+    piano_notes_high = [:g, :f, :c, :d, :c,
+                        [:d, :f], [:d, :f], [:e, :g], [:e, :g], [:f, :a], :r, :c,
+                        :a, :g, :f, :c, :d, :c, :c]
+    piano_tempo_high = [0.5, 0.5, 0.5, 1, 1,
+                        0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5,
+                        0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5]
+    
+    play_pattern_timed [:c, :f, :a] , [0.05, 0.05, 0.4], sustain: 0.5
+    
+    play_pattern_timed piano_notes_high, piano_tempo_high
+    
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:c, :f]
+    sleep 1
+    sleep 0.5
+    play_pattern_timed [:c, :a, :g, :f, :c], 0.5
+    play_pattern_timed [:d, :c], 1
+    
+    play_chord [:d, :f]
+    sleep 0.5
+    play_chord [:d, :f]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 1
+    sleep 0.5
+    play_pattern_timed [:c, :a, :g, :f, :c], 0.5
+    play_pattern_timed [:d],1
+    play_pattern_timed [:c, :c], 0.5
+    
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:c, :f]
+    sleep 1
+    sleep 1
+    
+    
+    
+    
+    
+    # REFREIN:
+    
+    sleep 1
+    play_pattern_timed [:f, :f], 0.5
+    
+    play_chord [:f, :bb]
+    sleep 0.5
+    play_chord [:f, :bb]
+    sleep 0.5
+    play_chord [:f, :bb]
+    sleep 0.25
+    play_chord [:f, :bb]
+    sleep 0.25
+    play_chord [:f, :bb]
+    sleep 1
+    play_chord [:f, :bb]
+    sleep 0.5
+    play_chord [:f, :bb]
+    sleep 0.5
+    play_chord [:f, :bb]
+    sleep 0.5
+    
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:c, :f]
+    sleep 0.5
+    sleep 0.5
+    play_chord [:e, :d5]
+    sleep 0.5
+    play_chord [:e, :d5]
+    sleep 0.5
+    
+    play_chord [:e, :d5]
+    sleep 0.5
+    play_pattern_timed [:c, :d, :e, :f, :g, :a, :bb], 0.5
+    
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:e, :g]
+    sleep 0.5
+    play_chord [:c, :f]
+    sleep 0.5
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 0.5
+    
+    play_chord [:f, :bb]
+    sleep 0.5
+    play_chord [:bb, :d5]
+    sleep 0.5
+    play_chord [:bb, :d5]
+    sleep 0.5
+    play_chord [:bb, :d5]
+    sleep 0.5
+    play_chord [:bb, :d5]
+    sleep 0.25
+    play_chord [:bb, :d5]
+    sleep 0.25
+    play_chord [:bb, :d5]
+    sleep 1
+    play_chord [:bb, :d5]
+    sleep 0.5
+    
+    play_chord [:a, :c5]
+    sleep 0.5
+    play_chord [:a, :c5]
+    sleep 0.5
+    play_chord [:a, :c5]
+    sleep 0.5
+    play_chord [:g, :b]
+    sleep 0.5
+    play_chord [:f, :a]
+    sleep 1
+    play_chord [:e, :c5]
+    sleep 0.5
+    play_chord [:e, :c5]
+    sleep 0.5
+    
+    play_chord [:e, :c5]
+    sleep 0.5
+    play_pattern_timed [:c, :d, :e, :f, :g, :a, :bb], 0.5
+    
+    play_chord [:f, :a]
+    sleep 1.5
+    play_chord [:c, :f]
+    sleep 0.5
+    play_chord [:b3, :g]
+    sleep 1.5
+    play_chord [:b3, :e]
+    sleep 0.5
+    
+    play_chord [:c, :f]
+    sleep 1
+    play_chord [:c, :f]
+    sleep 1
+    play_chord [:c, :f]
+    sleep 1
+    sleep 1
+  end
 end
 
 
@@ -480,34 +476,72 @@ refrein_viool_tempo = [1, 0.5, 0.5,
                        1.5, 0.5, 1.5, 0.5,
                        4]
 
+#refrein2:
+refrein2_viool_noten = [:r, :f, :f,
+                        :bb, :bb, :bb, :bb, :bb, :bb, :bb, :bb,
+                        :a, :a, :a, :g, :f, :r, :c5, :c5,
+                        :c5, :c, :d, :e, :f, :g, :a, :bb,
+                        :a, :a, :a, :g, :f, :f, :f,
+                        :bb, :bb, :bb, :bb, :bb, :bb, :bb, :bb,
+                        :a, :a, :a, :g, :f, :c5, :c5,
+                        :c5, :c, :d, :e, :f, :g, :a, :bb,
+                        :a, :f, :g, :e,
+                        :f, :r, :r, :a, :bb,
+                        :a, :f, :g, :e,
+                        :f]
+refrein2_viool_tempo = [1, 0.5, 0.5,
+                        0.5, 0.5, 0.25, 0.25, 1, 0.5, 0.5, 0.5,
+                        0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+                        0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+                        0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5,
+                        0.5, 0.5, 0.5, 0.5, 0.25, 0.25, 1, 0.5,
+                        0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5,
+                        0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+                        1.5, 0.5, 1.5, 0.5,
+                        1, 1, 1, 0.5, 0.5,
+                        1.5, 0.5, 1.5, 0.5,
+                        4]
 
-live_loop :horn do
+
+in_thread do
   plarray(strofe_viool_noten,strofe_viool_tempo,'Horn')
   plarray(refrein_viool_noten,refrein_viool_tempo,'Horn')
+  plarray(strofe_viool_noten,strofe_viool_tempo,'Horn')
+  plarray(refrein2_viool_noten,refrein2_viool_tempo,'Horn')
 end
 
-live_loop :harp do
+in_thread do
   plarray(strofe_viool_noten,strofe_viool_tempo,'Harp')
   plarray(refrein_viool_noten,refrein_viool_tempo,'Harp')
+  plarray(strofe_viool_noten,strofe_viool_tempo,'Harp')
+  plarray(refrein2_viool_noten,refrein2_viool_tempo,'Harp')
 end
 
-live_loop :trumpet do
+in_thread do
   sleep 32
   plarray(refrein_viool_noten,refrein_viool_tempo,'Clarinet')
+  sleep 32
+  plarray(refrein2_viool_noten,refrein2_viool_tempo,'Clarinet')
 end
 
 
-live_loop :viool do
+in_thread do
   sleep 32
   plarray(refrein_viool_noten,refrein_viool_tempo,'1st Violins stc')
+  sleep 32
+  plarray(refrein2_viool_noten,refrein2_viool_tempo,'1st Violins stc')
 end
 
-live_loop :flutesStc do
+in_thread do
   sleep 32
   plarray(refrein_viool_noten,refrein_viool_tempo,'Flutes stc')
+  sleep 32
+  plarray(refrein2_viool_noten,refrein2_viool_tempo,'Flutes stc')
 end
 
-live_loop :flutesSus do
+in_thread do
   sleep 32
   plarray(refrein_viool_noten,refrein_viool_tempo,'Flutes sus')
+  sleep 32
+  plarray(refrein2_viool_noten,refrein2_viool_tempo,'Flutes sus')
 end
